@@ -1,0 +1,197 @@
+/* src/components/MoodTracker.css */
+
+/* Update CSS Variables for Softer Colors */
+:root {
+  /* Emoji color associations - Softer Colors */
+  --happy-color: #FFEC8B;     /* Happy - Light Goldenrod */
+  --love-color: #FFB6C1;      /* In Love - Light Pink */
+  --sad-color: #87CEFA;       /* Sad - Light Sky Blue */
+  --anxious-color: #D8BFD8;   /* Anxious - Thistle */
+  --angry-color: #FFA07A;     /* Angry - Light Salmon */
+  --sleepy-color: #ADD8E6;    /* Sleepy - Light Blue */
+  --confused-color: #FFDAB9;  /* Confused - Peach Puff */
+  --pleased-color: #98FB98;   /* Pleased - Pale Green */
+}
+
+.mood-page {
+  min-height: 100vh;
+  background-color: #8c5bff;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-section {
+  width: 80%; /* Match emoji-grid width */
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.header-section h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.header-section h2 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 80%;
+  margin-bottom: 1.5rem;
+  padding: 0 2rem;
+}
+
+.emoji-button {
+  background-color: white;
+  border: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-button.selected {
+  color: white;
+}
+
+.emoji-button.selected.happy {
+  background-color: var(--happy-color);
+}
+
+.emoji-button.selected.love {
+  background-color: var(--love-color);
+}
+
+.emoji-button.selected.sad {
+  background-color: var(--sad-color);
+}
+
+.emoji-button.selected.anxious {
+  background-color: var(--anxious-color);
+}
+
+.emoji-button.selected.angry {
+  background-color: var(--angry-color);
+}
+
+.emoji-button.selected.sleepy {
+  background-color: var(--sleepy-color);
+}
+
+.emoji-button.selected.confused {
+  background-color: var(--confused-color);
+}
+
+.emoji-button.selected.pleased {
+  background-color: var(--pleased-color);
+}
+
+.emoji-button:hover {
+  transform: scale(1.05);
+}
+
+.emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.emoji-button.selected .label {
+  color: white;
+}
+
+.thoughts-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 80%; /* Match with emoji-grid width */
+  margin-top:0px;
+  margin-bottom: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.thoughts-section h3 {
+  text-align: left;
+  color: #333;
+}
+
+.thoughts-section textarea {
+  width: 100%;
+  min-height: 120px; /* Increased height */
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  margin-bottom: 1rem;
+  resize: none;
+  box-sizing: border-box; /* Ensure padding is included in width */
+  font-size: 1.1rem; /* Increased font size */
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  margin: 1rem auto;
+}
+
+.button-container button {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.save-btn {
+  background-color: #8c5bff; /* Match page purple */
+  color: white; /* White text for contrast */
+}
+
+.save-btn:hover {
+  background-color: #7340ff; /* Slightly darker purple on hover */
+}
+
+.skip-btn {
+  background-color: #ccc; /* Example color for skip button */
+  color: #333;
+}
+
+.skip-btn:hover {
+  background-color: #bbb;
+}

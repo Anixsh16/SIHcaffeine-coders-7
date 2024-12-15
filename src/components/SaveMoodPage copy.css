@@ -1,0 +1,222 @@
+/* src/components/SaveMoodPage.css */
+
+/* Update CSS Variables for Softer Colors */
+:root {
+  /* Emoji color associations - Softer Colors */
+  --happy-color: #FFEC8B;     /* Happy - Light Goldenrod */
+  --love-color: #FFB6C1;      /* In Love - Light Pink */
+  --sad-color: #87CEFA;       /* Sad - Light Sky Blue */
+  --anxious-color: #D8BFD8;   /* Anxious - Thistle */
+  --angry-color: #FFA07A;     /* Angry - Light Salmon */
+  --sleepy-color: #ADD8E6;    /* Sleepy - Light Blue */
+  --confused-color: #FFDAB9;  /* Confused - Peach Puff */
+  --pleased-color: #98FB98;   /* Pleased - Pale Green */
+}
+
+.save-mood-page {
+  display: flex;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Left Section */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  width: 50%;
+  padding: 60px;
+  background-color: #f0f4f8; /* Light background for contrast */
+  box-sizing: border-box;
+}
+
+/* Right Section */
+.right-section {
+  width: 50%;
+  padding: 60px;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-section h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Arrange items in top-left-box horizontally */
+.top-left-box {
+  width: 100%;                    /* Fit the left-section width */
+  max-width: 600px; /* Optional: set a max-width for alignment */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;            /* Rounded corners */
+  display: flex;
+  flex-direction: row;            /* Arrange items horizontally */
+  align-items: flex-start;        /* Align items to the top */
+  justify-content: center; /* Center items horizontally */
+  margin-bottom: 30px;            /* Space below the box */
+}
+
+/* Style the date-container */
+.date-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;             /* Space between date and notes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the date-box */
+.date-box {
+  text-align: center;
+}
+
+.date {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.month {
+  font-size: 24px;
+  color: #555;
+}
+
+/* Container for Note Heading and Note Box */
+.note-container {
+  display: flex;
+  flex-direction: column;         /* Stack heading and box vertically */
+  width: 100%;
+}
+
+/* Style the "Your Today's Note:" heading */
+.note-heading {
+  font-size: 20px;                /* Increased font size for better visibility */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;            /* Space below the heading */
+  text-align: left;               /* Ensure heading is left-aligned */
+}
+
+/* Style the note-box to fit inside the div with correct padding */
+.note-box {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding for better fit */
+  font-size: 16px; /* Reduced font size */
+  height: 100px; /* Set fixed height to align with date box */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it fits the container */
+  box-sizing: border-box;
+  text-align: left; /* Align text to the left */
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+}
+
+/* Calendar Styles */
+.calendar-container {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px; /* Match the top-left-box width */
+  display: flex;
+  justify-content: center;
+}
+
+/* React Calendar Custom Styles */
+
+/* Mood-specific dates */
+.mood-happy {
+  background-color: var(--happy-color);
+  color: white;
+  border-radius: 8px; /* Rounded edges */
+  margin: 2px; /* Space between tiles */
+}
+
+.mood-love {
+  background-color: var(--love-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-sad {
+  background-color: var(--sad-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-anxious {
+  background-color: var(--anxious-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-angry {
+  background-color: var(--angry-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-sleepy {
+  background-color: var(--sleepy-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-confused {
+  background-color: var(--confused-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.mood-pleased {
+  background-color: var(--pleased-color);
+  color: white;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+/* Optional: Remove default background for the current date to apply custom styles */
+.react-calendar__tile--now {
+  background: none;
+}
+
+/* Change color of Saturdays and Sundays in the calendar to black */
+.react-calendar__tile--weekend {
+  color: black;
+}
+
+/* Additional styling for better visibility */
+.react-calendar {
+  width: 100%;
+  border: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.react-calendar__tile {
+  height: 60px;
+}
+
+/* Highlight hovered dates */
+.react-calendar__tile:hover {
+  background-color: rgba(0, 242, 254, 0.2);
+}
+
+/* Active or selected date */
+.react-calendar__tile--active {
+  background-color: var(--accent-1);
+  color: white;
+  border-radius: 8px; /* Ensure consistency with other mood tiles */
+}

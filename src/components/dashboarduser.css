@@ -1,0 +1,220 @@
+:root {
+    --red-damask: #da6e31;
+    --eden: #12435a;
+    --curious-blue: #2692cb;
+    --apple: #529733;
+    --fern: #67b875;
+    --aths-special: #fffff5;
+    --claret: #8a1e3f;
+    --seaweed: #11250e;
+    --cardinal: #c32437;
+    --clam-shell: #cba5ae;
+}
+
+.sidebar1 {
+    background-color: black;
+    height: 100%; /* Make sidebar take full height */
+    width: 120px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    margin: 10px; /* Adjust margin for better spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.sidebarpadding1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.sidelogo1 {
+    background: url('favicon.ico') no-repeat center center;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar-item {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.sidebar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff; /* Default icon background */
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: var(--red-damask); /* Highlight color on hover */
+    transform: scale(1.1);
+}
+
+.icon1 {
+    color: black; /* Icon color */
+    font-size: 24px;
+}
+
+.sidebar-link.active .icon1 {
+    color: #ffffff; /* Active icon color */
+}
+
+.sidebar-link.active {
+    background-color: #1b8800; /* Active icon background */
+}
+
+.dashside {
+    display: flex;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    animation: backgroundChange 2s infinite;
+}
+
+@keyframes backgroundChange {
+    0% { background-image: url('i1.jpg'); }
+    20% { background-image: url('i2.jpg'); }
+    40% { background-image: url('i3.jpg'); }
+    60% { background-image: url('i4.jpg'); }
+    80% { background-image: url('i5.jpg'); }
+    100% { background-image: url('i1.jpg'); }
+}
+
+.dashheader1 {
+    display: flex; /* Align children in a row */
+    align-items: center; /* Vertical alignment */
+    justify-content: space-between; /* Space between children */
+    padding: 20px; /* Optional padding */
+    gap: 20px; /* Space between mainhead1 and cardmain */
+    margin-left: 10%;
+}
+
+.mainhead1 {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    height: 400px;
+    width: 1000px;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+
+.head31{
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.mainhead1 h1 {
+    color: white;
+    text-align: left;
+    font-size: 2.5rem; /* Increase font size */
+    margin: 40px; /* Increase bottom margin */
+    font-weight: bold; /* Make the text bold */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Add subtle text shadow */
+}
+
+.mainhead1 p{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 20px; /* Add bottom margin */
+    line-height: 1.5; /* Increase line height for better readability */
+    font-style: italic; /* Make the text italic */
+}
+
+.sidebar-link:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 100%; /* Position to the right of the element */
+    transform: translateY(-50%); /* Center vertically */
+    white-space: nowrap;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* src/components/dashboard.css */
+
+/* Chat Button */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: black;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chat-button:hover {
+    background-color: var(--claret)
+  }
+  
+  /* Chat Box */
+  .chat-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: 350px;
+    background-color: var(--cardinal);
+    border-radius: 20px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  /* Close Button */
+  .close-button {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .close-button:hover {
+    color: var(--claret);
+  }
+  
