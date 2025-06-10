@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();
@@ -13,6 +14,14 @@ app.use(express.json());
 
 // Routes
 app.use('/api', require('./routes/api'));
+
+// Serve static files from React app
+app.use(express.static(path.join(__dirname, '../../build')));
+
+// For any other route, serve index.html from React build
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../build', 'index.html'));
+});
 
 // Default route
 app.get('/', (req, res) => {
